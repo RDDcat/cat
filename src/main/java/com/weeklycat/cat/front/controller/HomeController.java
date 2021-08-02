@@ -10,4 +10,9 @@ public class HomeController {
     public String home(){
         return "home";
     }
+
+    @GetMapping("/weekly-cat")
+    public String weeklycat(){
+        return "weekly-cat";
+    }
 }
