@@ -1,5 +1,8 @@
+@media all and (min-width: 960px){
+    
+}
 
-@media all {
+@media all and (min-width: 960px){
     #warp{
 
     }
@@ -45,7 +48,7 @@
 
     .cat_title{
         display: inline-block;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         margin-top: 30px;
         margin-bottom: 10px;
     }

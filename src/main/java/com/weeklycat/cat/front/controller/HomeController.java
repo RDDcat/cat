@@ -7,31 +7,32 @@ package com.weeklycat.cat.front.controller;
 public class HomeController {
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
 
     @GetMapping("weekly-cat")
-    public String weeklycat(){
+    public String weeklycat() {
         return "weekly-cat";
     }
 
     @GetMapping("weekly-dandy-cat")
-    public String weeklydandycat(){
+    public String weeklydandycat() {
         return "weekly-dandy-cat";
     }
 
     @GetMapping("weekly-champion-cat")
-    public String weeklychampioncat(){
+    public String weeklychampioncat() {
         return "weekly-champion-cat";
     }
 
     @GetMapping("weekly-draw-cat")
-    public String weeklydrawcat(){
+    public String weeklydrawcat() {
         return "weekly-draw-cat";
     }
 
     @GetMapping("board/write")
-    public String write(){
+    public String write() {
         return "board/write";
+    }
 }
