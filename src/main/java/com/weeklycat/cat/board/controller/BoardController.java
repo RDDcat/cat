@@ -49,7 +49,7 @@ public class BoardController {
         board.setTitle(boardForm.getTitle());
         board.setText(boardForm.getText());
         boardService.saveBoard(board);
-        return "board/home";
+        return "redirect:/board";
     }
 
 

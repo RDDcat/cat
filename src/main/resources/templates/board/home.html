@@ -16,8 +16,9 @@
             </thead>
             <tbody>
             <tr th:each="board : ${boards}">
+                <td th:text="${board.bid}"></td>
                 <td th:text="${board.title}"></td>
-                <td th:text="${board.text}"></td>0
+                <td th:text="${board.text}"></td>
             </tr>
             </tbody>
         </table>
