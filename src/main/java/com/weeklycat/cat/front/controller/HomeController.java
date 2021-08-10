@@ -31,8 +31,4 @@ public class HomeController {
         return "weekly-draw-cat";
     }
 
-    @GetMapping("board/write")
-    public String write() {
-        return "board/write";
-    }
 }

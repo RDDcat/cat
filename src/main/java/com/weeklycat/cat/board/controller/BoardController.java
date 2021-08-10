@@ -6,12 +6,12 @@ import com.weeklycat.cat.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/board")
 public class BoardController {
 
     private final BoardService boardService;
@@ -28,40 +28,34 @@ public class BoardController {
 
 
     //
-    @GetMapping("board")
+    @GetMapping("/list")
     public String list(Model model){
         List<Board> boards = boardService.findBoards();
         model.addAttribute("boards", boards);
-        return "board/home";
+        return "board/list";
     }
 
     //
-    @GetMapping("board/write")
-    public String goWritePage(){
+    @GetMapping("/write")
+    public String writeBoard(Model model, @RequestParam(required = false) Long id){
+        if(id == null){
+            model.addAttribute("board",new Board());
+        } else{
+            Board board = boardService.findByID(id).orElse(null);
+            model.addAttribute("board", board);
+        }
+
         return "board/write";
     }
 
 
     // 글쓰기
-    @PostMapping("board/new")
-    public String createBoard(BoardForm boardForm){
-        Board board = new Board();
-        board.setTitle(boardForm.getTitle());
-        board.setText(boardForm.getText());
+    @PostMapping("/write")
+    public String createBoard(@ModelAttribute Board board){
         boardService.saveBoard(board);
-        return "redirect:/board";
+        return "redirect:/board/list";
     }
 
-
-    // test 에러남 ...? 왜지...
-    @GetMapping("board-api")
-    public Board apitest(){
-        Board board = new Board();
-        board.setBid(1L);
-        board.setTitle("test dummy title");
-        board.setText("test dummy text text");
-        return board;
-    }
 
     @GetMapping("hello")
     public String hello(Model model){

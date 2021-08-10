@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace='fragments/head :: head'>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>전체 글</th>
+                <div>총 건수 : <span th:text="${#lists.size(boards)}"></span></div>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boards}">
+                <td th:text="${board.id}"></td>
+                <td><a th:href="@{/board/write(id=${board.id})}" th:text="${board.title}"></a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </table>
+</div>
+
+<div class="text-right">
+    <a type="button" class="btn btn-primary" th:href="@{/board/write}">쓰기</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

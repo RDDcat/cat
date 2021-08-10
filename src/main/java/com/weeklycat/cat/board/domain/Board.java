@@ -10,18 +10,19 @@ public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bid;
+    private Long id;
     private String title;
-    private String text;
+    private String context; // 아 씨발 지금봄;; content로 하려했는데;; 유지보수 수고하고~
+
     // 글을 쓴 유저 아이디
     // private Long uid;
 
-    public Long getBid() {
-        return bid;
+    public Long getId() {
+        return id;
     }
 
-    public void setBid(Long bid) {
-        this.bid = bid;
+    public void setId(Long bid) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -32,20 +33,20 @@ public class Board {
         this.title = title;
     }
 
-    public String getText() {
-        return text;
+    public String getContext() {
+        return context;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContext(String context) {
+        this.context = context;
     }
 
     @Override
     public String toString() {
         return "Board{" +
-                "bid=" + bid +
+                "id=" + id +
                 ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
+                ", context='" + context + '\'' +
                 '}';
     }
 }

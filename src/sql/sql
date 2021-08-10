@@ -1,4 +1,0 @@
-INSERT INTO BOARDS(id, title, text) VALUES (1, 'dummy title1', 'dummy text1'), (2, 'dummy title21', 'dummy text21');
-
-
-
