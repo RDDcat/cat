@@ -14,9 +14,36 @@ body{
     background:url(../images/s_images/body_bg.png);
     line-height:1;
 }
+
 a {
     text-decoration: none;
-    color: black
+    color: black;
+}
+
+img {
+    width: 254px;
+    height: 254px;
+    object-fit: cover;
+}
+
+.user_icon{
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border: 4px groove;
+    border-radius: 100%;
+}
+
+.icon_s{
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+.icon_m{
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
 }
 
 /* 웹폰트 CSS */
